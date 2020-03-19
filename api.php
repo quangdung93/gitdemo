@@ -16,10 +16,20 @@ function currency($from_Currency,$to_Currency,$amount) {
   $data = explode('"', $rawdata);
   $data = explode('.', $data['3']);
   $data[0] = str_replace(" ", "",preg_replace('/\D/', '',  $data[0]));
+
   if(isset($data[1])){
     $data[1] = str_replace(" ", "",preg_replace('/\D/', '', $data[1]));
     $var = $data[0].".".$data[1];        
   } else{
     $var = $data[0];
   }
-  return round($var,2); }
+
+  if(isset($_GET['utm_source'])){
+    echo $_GET['utm_source'];
+  }
+  else{
+    echo 'Source not found';
+  }
+
+  return round($var,2); 
+}
