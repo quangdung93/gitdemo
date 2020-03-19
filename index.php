@@ -41,7 +41,7 @@
 	<script>
 
 		$(document).ready(function(){
-			// getApi();
+			getApiCrm();
 		});
 
 		$('#btn-submit').click(function(e){
